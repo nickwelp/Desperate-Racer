@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{8FBF69C1-48F7-99DC-7CE6-421B27497EB7}</ProjectGuid>
+	<ProjectGuid>{8E3B1A5E-83EE-FFE1-C8E8-84378EEC6DA6}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -95,6 +95,7 @@
      <Compile Include="Assets\Scripts\c#\CarCamera.cs" />
      <Compile Include="Assets\Scripts\c#\GUIHUD.cs" />
      <Compile Include="Assets\Scripts\c#\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\c#\OnLoad.cs" />
      <Compile Include="Assets\Scripts\c#\RaceManager.cs" />
      <Compile Include="Assets\~AlternatePhysicsModel\Scripts\AerodynamicResistance.cs" />
      <Compile Include="Assets\~AlternatePhysicsModel\Scripts\AntiRollBar.cs" />
@@ -134,10 +135,8 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{56949C5B-E999-48FD-D227-75BA2C71BB7E}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{51E466F4-280E-C007-AEE7-26650F829442}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+      <Project>{28DA3443-6C58-9E8B-3342-DEA7AE2A0877}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -105,9 +105,11 @@ function FixedUpdate()
 
 function PauseControls(){
 	if (Input.GetKey("p")){
+		//_GameManager.Instance.ChangeState("PAUSED");
 		_GameManager.Instance.Pause(true);
 		}
 	if(Input.GetKey("i")){
+		//_GameManager.Instance.ChangeState("RACING");
 		_GameManager.Instance.Pause(false);
 	
 	}
