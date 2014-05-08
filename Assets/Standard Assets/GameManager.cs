@@ -39,11 +39,12 @@ public class GameManager : MonoBehaviour{
         }
 		// Add your game mananger members here
 		public void Pause(bool paused) {
-			if(paused){
-                
+            
+            if(paused){
+                ChangeState("PAUSED");
 				Time.timeScale = 0f;
 			}else{
-                
+                ChangeState("RACING");
 				Time.timeScale = 1.0f;
 			}			
 		}
