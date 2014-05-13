@@ -1,14 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 
 public class TestRaceTrack : MonoBehaviour {
     //public InsideWall as GameObject;
    // public OutsideWall as GameObject;
     public GameObject[] RoadWay;
-
+    private string LargestName;
+    public SaveMeshForWeb other;
 	// Use this for initialization
 	void Start () {
-	
+        string MeshDirectory = Application.dataPath + "/Streaming Assets/Meshes/";
+        DirectoryInfo dir = new DirectoryInfo(MeshDirectory);
+        FileInfo[] info = dir.GetFiles("*.*");
+        foreach (FileInfo f in info) {
+            
+             Debug.Log(f.Name);
+
+        }
 	}
 	
 	// Update is called once per frame
@@ -38,6 +47,9 @@ public class TestRaceTrack : MonoBehaviour {
         //    OutsideWall.AddComponent("SaveMeshForWeb");
             foreach(GameObject Road in RoadWay){
                 Road.AddComponent("SaveMeshForWeb");
+                other = Road.GetComponent<SaveMeshForWeb>();
+                other.SaveThis("Road1");
+
                 }
     }
 }

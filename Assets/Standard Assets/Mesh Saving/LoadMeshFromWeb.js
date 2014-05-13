@@ -1,8 +1,9 @@
 ﻿// Add this to any object. This will load it's
 // mesh from the given URL.
  
-var url = "http://files.unity3d.com/aras/SerializedMesh.data";
- 
+//var url = "http://files.unity3d.com/aras/SerializedMesh.data";
+var url = "file://" + Application.dataPath + "/Streaming Assets/meshes/Road1.data"; 
+print(url);
 function Start()
 {
     print ("Loading mesh from " + url);
