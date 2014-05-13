@@ -52,9 +52,9 @@
      <Compile Include="Assets\Scripts\js\SoundToggler.js" />
      <Compile Include="Assets\Scripts\js\Steer Air Craft.js" />
      <Compile Include="Assets\Scripts\js\addDragToAI.js" />
+     <Compile Include="Assets\Scripts\js\createRaceWay.js" />
      <Compile Include="Assets\Scripts\js\plateOutWaterPlane.js" />
      <Compile Include="Assets\Scripts\js\seekSteer.js" />
-     <Compile Include="Assets\Substances_NickMade\js\createRaceWay.js" />
      <None Include="Assets\Pro Standard Assets\Image Based\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Shaders\LightsEmmissive.shader" />
      <None Include="Assets\Shaders\ShadowProjection.shader" />
