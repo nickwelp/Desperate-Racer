@@ -1,24 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
+using System.Text.RegularExpressions;
 
 public class TestRaceTrack : MonoBehaviour {
-    //public InsideWall as GameObject;
-   // public OutsideWall as GameObject;
+    public GameObject[] InsideWall;
+    public GameObject[] OutsideWall;
     public GameObject[] RoadWay;
-    private string LargestName;
     public SaveMeshForWeb other;
+    private bool GetName = false;
 	// Use this for initialization
-	void Start () {
-        string MeshDirectory = Application.dataPath + "/Streaming Assets/Meshes/";
-        DirectoryInfo dir = new DirectoryInfo(MeshDirectory);
-        FileInfo[] info = dir.GetFiles("*.*");
-        foreach (FileInfo f in info) {
-            
-             Debug.Log(f.Name);
-
-        }
-	}
+    private string NameTheTrack = "NameThisTrack";
 	
 	// Update is called once per frame
 	void Update () {
@@ -27,29 +19,55 @@ public class TestRaceTrack : MonoBehaviour {
 
     void OnGUI()
     {
-        if (GUI.Button(new Rect(20, 40, 80, 20), "Save Map")){
-        //   InsideWall = GameObject.Find('InsideWall');
-        //   OutsideWall = GameObject.Find('OutsideWall');
-
-            SaveMap();
-        }
-        if (GUI.Button(new Rect(20, 70, 80, 20), "Reload Map"))
+        if (!GetName)
         {
-            Application.LoadLevel("_Map Maker");
+            if (GUI.Button(new Rect(20, 40, 80, 20), "Save Map"))
+            {
+                //SaveMap();
+                GetName = true;
+
+            }
+            if (GUI.Button(new Rect(20, 70, 80, 20), "Reload Map"))
+            {
+                Application.LoadLevel("_Map Maker");
+            }
+        }
+        else if (GetName)
+        {
+            NameTheTrack = GUILayout.TextField(NameTheTrack, 20);
+            if (GUI.Button(new Rect(20, 40, 80, 20), "Ok"))
+            {
+                NameTheTrack = Regex.Replace(NameTheTrack, "[^a-zA-Z0-9_.]+", "");
+                SaveMap(NameTheTrack);
+            }
+
+
         }
 
     }
-    void SaveMap()
+    void SaveMap(string DirectoryName)
     {
               RoadWay = GameObject.FindGameObjectsWithTag("Road");
-	        //add SaveMeshForWeb.js to Roadway, InsideWall and Outsidewall
-       //     InsideWall.AddComponent("SaveMeshForWeb");
-        //    OutsideWall.AddComponent("SaveMeshForWeb");
-            foreach(GameObject Road in RoadWay){
+              InsideWall = GameObject.FindGameObjectsWithTag("Inside Wall");
+              OutsideWall = GameObject.FindGameObjectsWithTag("Outside Wall");
+              Directory.CreateDirectory(Application.dataPath + "/Streaming Assets/Meshes/"+DirectoryName);
+	          foreach(GameObject Road in RoadWay){
                 Road.AddComponent("SaveMeshForWeb");
                 other = Road.GetComponent<SaveMeshForWeb>();
-                other.SaveThis("Road1");
-
+                other.SaveThis("Road", DirectoryName);
                 }
+              foreach (GameObject IWall in InsideWall)
+              {
+                  IWall.AddComponent("SaveMeshForWeb");
+                  other = IWall.GetComponent<SaveMeshForWeb>();
+                  other.SaveThis("InsideWall", DirectoryName);
+              }
+              foreach (GameObject OWall in OutsideWall)
+              {
+                  OWall.AddComponent("SaveMeshForWeb");
+                  other = OWall.GetComponent<SaveMeshForWeb>();
+                  other.SaveThis("OutsideWall", DirectoryName);
+              }
+
     }
 }

@@ -94,10 +94,12 @@
      <Compile Include="Assets\Scripts\c#\BlowUpBullet.cs" />
      <Compile Include="Assets\Scripts\c#\CarCamera.cs" />
      <Compile Include="Assets\Scripts\c#\GUIHUD.cs" />
+     <Compile Include="Assets\Scripts\c#\LoadRoad.cs" />
      <Compile Include="Assets\Scripts\c#\MainMenu.cs" />
      <Compile Include="Assets\Scripts\c#\OnLoad.cs" />
      <Compile Include="Assets\Scripts\c#\RaceManager.cs" />
      <Compile Include="Assets\Scripts\c#\TestRaceTrack.cs" />
+     <Compile Include="Assets\Scripts\c#\simpleDropDown.cs" />
      <Compile Include="Assets\~AlternatePhysicsModel\Scripts\AerodynamicResistance.cs" />
      <Compile Include="Assets\~AlternatePhysicsModel\Scripts\AntiRollBar.cs" />
      <Compile Include="Assets\~AlternatePhysicsModel\Scripts\CarController.cs" />

@@ -66,6 +66,7 @@
      <Compile Include="Assets\Pro Standard Assets\Water\Sources\Water.cs" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Standard Assets\GameManager.cs" />
+     <Compile Include="Assets\Standard Assets\MeshManager.cs" />
      <Compile Include="Assets\Standard Assets\RotatableGuiItem.cs" />
      <None Include="Assets\Pro Standard Assets\Image Based\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Shaders\LightsEmmissive.shader" />

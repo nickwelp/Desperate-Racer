@@ -3,12 +3,12 @@
  
 var fileName;
 var saveTangents = false;
- 
-function SaveThis(Name : String)
+
+function SaveThis(Name : String, RaceName : String)
 {
 	fileName = Name + ".data";
     var inputMesh = GetComponent(MeshFilter).mesh;
-    var fullFileName = Application.dataPath + "/Streaming Assets/Meshes/" + fileName;
+    var fullFileName = Application.dataPath + "/Streaming Assets/Meshes/" + RaceName +"/" + fileName;
     MeshSerializer.WriteMeshToFileForWeb (inputMesh, fullFileName, saveTangents);
     print ("Saved " + name + " mesh to " + fullFileName );
 }

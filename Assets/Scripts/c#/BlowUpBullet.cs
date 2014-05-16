@@ -11,7 +11,7 @@ public class BlowUpBullet : MonoBehaviour {
 
 	public float speed = 2.0f;
 	void Update() {
-		float step = speed * Time.deltaTime;
+		//float step = speed * Time.deltaTime;
 		//transform.position = Vector3.MoveTowards(transform.position,(transform.position.x,transform.position.y,transform.position.z+2), step);
 		transform.position += transform.forward * speed * Time.deltaTime;
 	}

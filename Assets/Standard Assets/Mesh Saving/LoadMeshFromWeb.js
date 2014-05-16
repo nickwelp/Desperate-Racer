@@ -2,11 +2,12 @@
 // mesh from the given URL.
  
 //var url = "http://files.unity3d.com/aras/SerializedMesh.data";
-var url = "file://" + Application.dataPath + "/Streaming Assets/meshes/Road1.data"; 
-print(url);
-function Start()
-{
-    print ("Loading mesh from " + url);
+var Name : String;
+
+
+
+function Start(){
+	var url = "file://" + Application.dataPath + "/Streaming Assets/meshes/"+ Name +".data"; 
     var download = WWW(url);
     yield download;
     var mesh = MeshSerializer.ReadMeshFromWWW( download );
