@@ -4,15 +4,16 @@ public class simpleDropDown : MonoBehaviour
 {
     private Vector2 scrollViewVector = Vector2.zero;
     public Rect dropDownRect = new Rect(125, 50, 125, 300);
-    public static string[] list;
+    public string[] list = { "x", "o" };
 
     int indexNumber;
     bool show = false;
-
-    public static void SetList(string[] NewList)
+   
+    public void SetList(string[] NewList)
     {
+        Debug.Log("Test 1");
         list = NewList;
-
+        Debug.Log("Test 2");
     }
     void OnGUI()
     {
