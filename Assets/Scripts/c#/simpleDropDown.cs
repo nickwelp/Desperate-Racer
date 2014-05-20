@@ -6,14 +6,12 @@ public class simpleDropDown : MonoBehaviour
     public Rect dropDownRect = new Rect(125, 50, 125, 300);
     public string[] list = { "x", "o" };
 
-    int indexNumber;
+    public int indexNumber;
     bool show = false;
    
     public void SetList(string[] NewList)
     {
-        Debug.Log("Test 1");
         list = NewList;
-        Debug.Log("Test 2");
     }
     void OnGUI()
     {
@@ -32,9 +30,7 @@ public class simpleDropDown : MonoBehaviour
         if (show)
         {
             scrollViewVector = GUI.BeginScrollView(new Rect((dropDownRect.x - 100), (dropDownRect.y + 25), dropDownRect.width, dropDownRect.height), scrollViewVector, new Rect(0, 0, dropDownRect.width, Mathf.Max(dropDownRect.height, (list.Length * 25))));
-
             GUI.Box(new Rect(0, 0, dropDownRect.width, Mathf.Max(dropDownRect.height, (list.Length * 25))), "");
-
             for (int index = 0; index < list.Length; index++)
             {
 

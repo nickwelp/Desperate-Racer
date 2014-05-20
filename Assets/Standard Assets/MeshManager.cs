@@ -4,7 +4,7 @@ using System.IO;
 
 public class MeshManager : MonoBehaviour {
     private string LargestName;
-    private FileInfo[] info;
+    private DirectoryInfo[] info;
     private DirectoryInfo dir;
     public int fileCount = 0;
     public string[] listOfFiles;
@@ -12,17 +12,15 @@ public class MeshManager : MonoBehaviour {
 	// Use this for initialization
     void Start()
     {
-        Debug.Log("State MeshManger");
         string MeshDirectory = Application.dataPath + "/Streaming Assets/Meshes/";
-        Debug.Log(Application.dataPath);
         dir = new DirectoryInfo(MeshDirectory);
-        info = dir.GetFiles("*.*");
-        fileCount = info.Length;
-        int y = 0;
-        listOfFiles = new string[info.Length];
-        foreach (FileInfo f in info)
+        info = dir.GetDirectories();
+        fileCount = info.Length+1;
+        int y = 1;
+        listOfFiles = new string[info.Length+1];
+        listOfFiles[0] = "Select Map";
+        foreach (DirectoryInfo f in info)
         {
-            Debug.Log(f.Name);
             listOfFiles[y] = f.Name;
             y++;
         }
